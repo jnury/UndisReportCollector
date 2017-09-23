@@ -121,7 +121,7 @@ namespace UndisReportCollector
                     {
                         if (Directory.Exists(ReportsFolder))
                         {
-                            var fileName = $"{agentId}.dat";
+                            var fileName = $"{agentId}.json";
                             // compute file name based on AgentId
                             var fileFullPath = Path.Combine(ReportsFolder, fileName);
 
