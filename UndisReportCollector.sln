@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UndisReportCollector", "UndisReportCollector\UndisReportCollector.csproj", "{606FBB8D-FCC7-431A-8044-303A74753D53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UndisReportCollector.Tests", "UndisReportCollector.Tests\UndisReportCollector.Tests.csproj", "{83DDB10C-0BE4-410D-9E94-E6BDE3BDAF84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{606FBB8D-FCC7-431A-8044-303A74753D53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{606FBB8D-FCC7-431A-8044-303A74753D53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{606FBB8D-FCC7-431A-8044-303A74753D53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{606FBB8D-FCC7-431A-8044-303A74753D53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83DDB10C-0BE4-410D-9E94-E6BDE3BDAF84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83DDB10C-0BE4-410D-9E94-E6BDE3BDAF84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83DDB10C-0BE4-410D-9E94-E6BDE3BDAF84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83DDB10C-0BE4-410D-9E94-E6BDE3BDAF84}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C0C891B9-3F97-479A-8338-81C95CA0FF14}
+	EndGlobalSection
+EndGlobal
