@@ -28,7 +28,7 @@ Add Undis HTTP module reference in ***<modules>*** section.
 
     <modules>
       ...
-			<add name="UndisReportCollector" type="UndisReportCollector.HTTPModule" />
+      <add name="UndisReportCollector" type="UndisReportCollector.HTTPModule" />
     </modules>
 
 Save web.config. This should reload IIS application pool and start grabbing DSC reports.
