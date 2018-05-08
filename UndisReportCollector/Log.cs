@@ -16,8 +16,11 @@ namespace UndisReportCollector
         private string refreshMode = null;
         private string status = null;
         private bool rebootRequested = false;
+        private bool compliant = true;
         private int durationInSeconds = 0;
         private int numberOfResources = 0;
+        private string resourcesInDesiredState = "";
+        private string resourcesNotInDesiredState = "";
         private string hostname = null;
         private enum LevelEnum { UNDIFINED, CRITICAL, ERROR, WARN, INFO, VERBOSE };
 
@@ -52,6 +55,35 @@ namespace UndisReportCollector
                     this.durationInSeconds = statusData.DurationInSeconds;
                     this.numberOfResources = statusData.NumberOfResources;
                     this.hostname = statusData.Hostname;
+                    if (statusData.ResourcesInDesiredState != null)
+                    {
+                        foreach (Resource resource in statusData.ResourcesInDesiredState)
+                        {
+                            if (this.resourcesInDesiredState != "")
+                            {
+                                this.resourcesInDesiredState += ", ";
+                            }
+
+                            this.resourcesInDesiredState += resource.InstanceName;
+                        }
+                        if (statusData.ResourcesInDesiredState.Length < this.numberOfResources)
+                        {
+                            this.compliant = false;
+                        }
+                    }
+
+                    if (statusData.ResourcesNotInDesiredState != null)
+                    {
+                        foreach (Resource resource in statusData.ResourcesNotInDesiredState)
+                        {
+                            if (this.resourcesNotInDesiredState != "")
+                            {
+                                this.resourcesNotInDesiredState += ", ";
+                            }
+
+                            this.resourcesNotInDesiredState += resource.InstanceName;
+                        }
+                    }
                 }
             }
         }
@@ -94,8 +126,9 @@ namespace UndisReportCollector
 
                 logLine += Enum.GetName(typeof(LevelEnum), logLevel);
 
-                logLine += $" Hostname={this.hostname} OperationType={this.operationType} Status={this.status} RefreshMode={this.refreshMode}";
+                logLine += $" Hostname={this.hostname} OperationType={this.operationType} Status={this.status} RefreshMode={this.refreshMode} Compliant={ this.compliant}";
                 logLine += $" RebootRequested={this.rebootRequested} DurationInSeconds={this.durationInSeconds} NumberOfResources={this.numberOfResources} JobId={this.jobId}";
+                logLine += $" ResourcesInDesiredState='{this.resourcesInDesiredState}' ResourcesNotInDesiredState='{this.resourcesNotInDesiredState}'";
 
                 try
                 {
