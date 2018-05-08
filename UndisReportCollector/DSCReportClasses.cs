@@ -38,6 +38,7 @@ namespace UndisReportCollector
         public string Locale { get; set; }
         public string Mode { get; set; }
         public Resource[] ResourcesInDesiredState { get; set; }
+        public Resource[] ResourcesNotInDesiredState { get; set; }
         public MetaConfiguration MetaConfiguration { get; set; }
     }
 
