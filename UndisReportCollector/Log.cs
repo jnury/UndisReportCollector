@@ -21,6 +21,7 @@ namespace UndisReportCollector
         private int numberOfResources = 0;
         private string resourcesInDesiredState = "";
         private string resourcesNotInDesiredState = "";
+        private string error = "";
         private string hostname = null;
         private enum LevelEnum { UNDIFINED, CRITICAL, ERROR, WARN, INFO, VERBOSE };
 
@@ -82,6 +83,16 @@ namespace UndisReportCollector
                             }
 
                             this.resourcesNotInDesiredState += resource.InstanceName;
+
+                            if (resource.Error != null)
+                            {
+                                if (this.error != "")
+                                {
+                                    this.error += "\r\n";
+                                }
+
+                                this.error += resource.InstanceName + @" """ + resource.Error + @"""";
+                            }
                         }
                     }
                 }
@@ -129,6 +140,7 @@ namespace UndisReportCollector
                 logLine += $" Hostname={this.hostname} OperationType={this.operationType} Status={this.status} RefreshMode={this.refreshMode} Compliant={ this.compliant}";
                 logLine += $" RebootRequested={this.rebootRequested} DurationInSeconds={this.durationInSeconds} NumberOfResources={this.numberOfResources} JobId={this.jobId}";
                 logLine += $" ResourcesInDesiredState='{this.resourcesInDesiredState}' ResourcesNotInDesiredState='{this.resourcesNotInDesiredState}'";
+                logLine += $" Error='{this.error}'";
 
                 try
                 {
