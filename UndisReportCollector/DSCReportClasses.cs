@@ -49,6 +49,7 @@ namespace UndisReportCollector
         public string DurationInSeconds { get; set; }
         public string InstanceName { get; set; }
         public DateTime StartDate { get; set; }
+        public string Error { get; set; }
         public string ResourceName { get; set; }
         public string ModuleVersion { get; set; }
         public bool RebootRequested { get; set; }
