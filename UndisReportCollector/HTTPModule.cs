@@ -102,7 +102,7 @@ namespace UndisReportCollector
                     {
                         try
                         {
-                            string statusDataStr = dscReport.StatusData[0].Replace(@"\""", @"""");
+                            string statusDataStr = dscReport.StatusData[0];
                             JavaScriptSerializer json_serializer = new JavaScriptSerializer();
                             statusData = json_serializer.Deserialize<StatusData>(statusDataStr);
                         }
