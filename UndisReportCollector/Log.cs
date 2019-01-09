@@ -49,6 +49,7 @@ namespace UndisReportCollector
                 this.operationType = dscReport.OperationType;
                 this.refreshMode = dscReport.RefreshMode;
                 this.rebootRequested = dscReport.RebootRequested;
+                this.timestamp = dscReport.EndTime;
 
                 // Get data from DSC StatusReport, if available
                 if (statusData != null)
@@ -128,7 +129,7 @@ namespace UndisReportCollector
             if (Directory.Exists(LogsFolder) && logLevel <= configLogLevel)
             {
                 // Build log filename
-                var fileName = $"DSCReports_{timestamp.ToString("yyyyMMdd")}.log";
+                var fileName = $"DSCReports_{DateTime.Now.ToString("yyyyMMdd")}.log";
                 var fileFullPath = Path.Combine(LogsFolder, fileName);
 
                 // Build log line
