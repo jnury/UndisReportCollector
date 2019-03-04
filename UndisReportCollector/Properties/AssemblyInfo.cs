@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("UndisReportCollector")]
 [assembly: AssemblyDescription("HTTP module that grabs reports sent to DSC Pull Server")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Undis Lab")]
+[assembly: AssemblyCompany("Julien Nury")]
 [assembly: AssemblyProduct("Undis Report Collector")]
-[assembly: AssemblyCopyright("Copyright © 2018 Undis Lab")]
+[assembly: AssemblyCopyright("Copyright © 2019 Julien Nury")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
