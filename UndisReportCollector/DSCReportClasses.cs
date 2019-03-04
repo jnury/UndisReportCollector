@@ -23,6 +23,7 @@ namespace UndisReportCollector
     public class StatusData
     {
         public DateTime StartDate { get; set; }
+        public string Error { get; set; }
         public string[] IPV6Addresses { get; set; }
         public int DurationInSeconds { get; set; }
         public string CurrentChecksum { get; set; }

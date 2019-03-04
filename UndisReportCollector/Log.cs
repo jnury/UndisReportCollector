@@ -57,6 +57,12 @@ namespace UndisReportCollector
                     this.durationInSeconds = statusData.DurationInSeconds;
                     this.numberOfResources = statusData.NumberOfResources;
                     this.hostname = statusData.Hostname;
+
+                    if (statusData.Error != null)
+                    {
+                        this.error = statusData.Error;
+                    }
+
                     if (statusData.ResourcesInDesiredState != null)
                     {
                         foreach (Resource resource in statusData.ResourcesInDesiredState)
